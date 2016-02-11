@@ -1,0 +1,18 @@
+{
+    "structure": {
+        "readme": "introducao.md"
+    },
+    "title" : "Canções de amor à você",
+    "description": "Poesias de Franklin Maciel",
+    "language": "pt",
+    "plugins": ["styles-sass", "disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "cancoesdeamor"
+        }
+    },
+    "styles": {
+        "website": "./sass/website.sass",
+        "pdf": "./sass/pdf.sass"
+    }
+}
