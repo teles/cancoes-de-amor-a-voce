@@ -1,0 +1,33 @@
+language: node_js
+
+# Adicione a branch onde está a instalação do Hexo
+branches:
+  only:
+  - master
+
+before_install:
+- npm install -g hexo
+
+install:
+- npm install
+- gitbook install
+
+# Configure seu nome de usuário e e-mail
+before_script:
+- git config --global user.name 'teles'
+- git config --global user.email 'josetelesmaciel@gmail.com'
+
+
+script:
+
+# Configure a Branch a ser feito o deploy
+after_success:
+- mkdir .deploy
+- cd .deploy
+- git clone --depth 1 --branch BRANCH --single-branch $DEPLOY_REPO . || (git init && git remote add -t BRANCH origin $DEPLOY_REPO)
+- git checkout gh-pages
+- rm -rf ./*
+- gitbook build . livro
+- git add -A .
+- git commit -m 'Atualizando livro'
+- git push -q -u origin gh-pages
