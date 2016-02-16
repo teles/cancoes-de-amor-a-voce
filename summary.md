@@ -32,3 +32,5 @@
     * [XXXI Vértebra](poesias/xxxi-vertebra.md)
     * [XXXII Vértebra](poesias/xxxii-vertebra.md)
     * [XXXIII Vértebra](poesias/xxxiii-vertebra.md)
+* [Parte Dois - Canções de amor]()
+    * [I Vértebra](poesias/a-mulher-que-nasce-de-ti.md)
