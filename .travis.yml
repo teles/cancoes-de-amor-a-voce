@@ -14,4 +14,4 @@ before_script:
 script: bash ./deploy-to-gh-pages.sh
 
 after_script:
-- git push --force --quiet "https://$GH_TOKEN@github.com/teles/cancoes-de-amor-a-voce.git" master:gh-pages > /dev/null 2>&1
+- git push --force --quiet "$GH_REFERENCE" master:gh-pages
