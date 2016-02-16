@@ -1,0 +1,17 @@
+language: node_js
+
+before_install:
+- npm install gitbook-cli -g
+- gitbook install
+
+install:
+
+# Configure seu nome de usuário e e-mail
+before_script:
+- git config --global user.name 'Travis-ci'
+- git config --global user.email 'josetelesmaciel@gmail.com'
+
+script: bash ./deploy-to-gh-pages.sh
+
+after_script:
+- git push --force --quiet "https://$GH_TOKEN@github.com/teles/cancoes-de-amor-a-voce.git" master:gh-pages > /dev/null 2>&1
